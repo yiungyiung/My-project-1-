@@ -17,11 +17,11 @@ public class Shooting : MonoBehaviour
     
     void Update()
     {   
-        if(Input.GetMouseButton(0)) //When the mouse button is pressed 
+        if(Input.GetButton("Fire1")) //When the mouse button is pressed 
       {
         canShoot = true;
       }
-      if(Input.GetMouseButtonUp(0))//when the mouse button is lifted
+      if(Input.GetButtonUp("Fire1"))//when the mouse button is lifted
       {
       canShoot = false;
       }
