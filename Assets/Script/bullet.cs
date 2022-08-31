@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    float time=0;
-    
-    void Update()
-    {
-        time=time+Time.deltaTime;
 
-        if (time>=10)
+    
+    void Start()
+    {
+            Destroy(gameObject,5);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag=="wall")
         {
             Destroy(gameObject);
         }
-
+        
     }
 }
