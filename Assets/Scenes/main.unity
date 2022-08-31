@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.08660828, g: 0.051125146, b: 0.02913579, a: 1}
+  m_IndirectSpecularColor: {r: 0.057508223, g: 0.03051448, b: 0.016715804, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7758,7 +7758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 898107423171647963, guid: c2c54dc9d90b41f40a4118deeba2bab1, type: 3}
-  spawnspeed: 2
+  spawnspeed: 1.5
   timeText: {fileID: 1022682969}
   timer: 0
   scoreText: {fileID: 1842904679}
