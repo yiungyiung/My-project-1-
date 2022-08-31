@@ -8,10 +8,12 @@ public class objectmover : MonoBehaviour
     float movespeed;
     [SerializeField]
     Health heal;
-
+    GameManager gaman;
+    
     void Start()
     {
         heal=GameObject.FindWithTag("Player").GetComponent<Health>();
+        gaman= GameObject.FindWithTag("GameController").GetComponent<GameManager>();
     }
     void Update()
     {
@@ -32,7 +34,8 @@ public class objectmover : MonoBehaviour
         }
         else if(other.tag=="bullet")
         {
-        GameObject.FindWithTag("GameController").GetComponent<GameManager>().upscore(10);
+        gaman.upscore(10);
+        Destroy(other.gameObject);
         Destroy(gameObject);
         }
         else{

@@ -9,6 +9,22 @@ public class Health : MonoBehaviour
     int health ;
     [SerializeField]
     TMP_Text healthText;
+    GameManager gaman;
+    int finalscore;
+    int kills;
+    [SerializeField]
+    TMP_Text killer;
+    [SerializeField]
+    TMP_Text scorer;
+    [SerializeField]
+    GameObject rescanvas;
+    [SerializeField]
+    TMP_Text timer;
+
+
+    void Start(){
+        gaman= GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+    }
     
 
     void Update()
@@ -21,7 +37,14 @@ public class Health : MonoBehaviour
         health=health-sub;
         if (health <=0)
         { health=0; 
-          Debug.Log("highscore"+((int)(GameObject.FindWithTag("GameController").GetComponent<GameManager>().timer)+GameObject.FindWithTag("GameController").GetComponent<GameManager>().score));
+          finalscore=(int)gaman.timer + gaman.score;
+          kills=gaman.kills;
+          timer.SetText("Time: "+gaman.timer+" sec");
+          rescanvas.SetActive(true);
+          killer.SetText("KILLED:" + kills);
+          scorer.SetText("SCORE: " + finalscore);
+          gaman.gameObject.SetActive(false);
+          gameObject.SetActive(false);
         }
     }
     
