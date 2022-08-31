@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
         health=health-sub;
         if (health <=0)
         { health=0; 
-          Debug.Log("highscore"+GameObject.FindWithTag("GameController").GetComponent<GameManager>().timer);
+          Debug.Log("highscore"+((int)(GameObject.FindWithTag("GameController").GetComponent<GameManager>().timer)+GameObject.FindWithTag("GameController").GetComponent<GameManager>().score));
         }
     }
     

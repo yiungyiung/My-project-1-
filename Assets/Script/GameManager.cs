@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     TMP_Text timeText;
     public double timer;
+    [SerializeField]
+    TMP_Text scoreText;
+    public int score;
 
     // Update is called once per frame
     void Update()
@@ -33,5 +36,11 @@ public class GameManager : MonoBehaviour
         }
         timer=System.Math.Round(Time.time,1);
         timeText.SetText(""+timer);
+        scoreText.SetText("Score: "+ (score+(int)Time.time));
+
+    }
+
+    public void upscore(int sc){
+        score=score+sc;
     }
 }

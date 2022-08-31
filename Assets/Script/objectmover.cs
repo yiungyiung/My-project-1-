@@ -32,6 +32,7 @@ public class objectmover : MonoBehaviour
         }
         else if(other.tag=="bullet")
         {
+        GameObject.FindWithTag("GameController").GetComponent<GameManager>().upscore(10);
         Destroy(gameObject);
         }
         else{
