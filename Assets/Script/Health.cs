@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
         { health=0; 
           finalscore=(int)gaman.timer + gaman.score;
           kills=gaman.kills;
-          timer.SetText("Time: "+gaman.timer+" sec");
+          timer.SetText("Time: "+(int)gaman.timer+" sec");
           rescanvas.SetActive(true);
           killer.SetText("KILLED:" + kills);
           scorer.SetText("SCORE: " + finalscore);

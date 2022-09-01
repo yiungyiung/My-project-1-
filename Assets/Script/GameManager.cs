@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         kills=0;
+        timer=0;
     }
     void Update()
     {
@@ -39,9 +40,9 @@ public class GameManager : MonoBehaviour
             spawned.transform.localScale=new Vector3(randomsize,randomsize,randomsize);
 
         }
-        timer=System.Math.Round(Time.time,1);
-        timeText.SetText(""+timer);
-        scoreText.SetText("Score: "+ (score+(int)Time.time));
+        timer=timer+Time.deltaTime;
+        timeText.SetText(""+System.Math.Round(timer,1));
+        scoreText.SetText("Score: "+ (score+(int)timer));
 
     }
 
