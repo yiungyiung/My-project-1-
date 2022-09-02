@@ -21,9 +21,15 @@ public class GameManager : MonoBehaviour
     TMP_Text scoreText;
     public int score;
     public int kills;
+    [SerializeField]
+    bool x2multipler;
+    [SerializeField]
+    float x2timer;
+    float x2timerfloat;
 
     void Start()
-    {
+    {   
+        
         kills=0;
         timer=0;
     }
@@ -44,14 +50,35 @@ public class GameManager : MonoBehaviour
         timeText.SetText(""+System.Math.Round(timer,1));
         scoreText.SetText("Score: "+ (score+(int)timer));
 
+        if(x2multipler)
+        {
+            if(x2timerfloat>=x2timer)
+            {
+                x2multipler = false;
+                x2timerfloat=0;
+            }
+            x2timerfloat+=Time.deltaTime;
+        }
+
     }
 
     public void upscore(int sc){
         kills+=1;
-        score=score+sc;
+        if(!x2multipler)
+        {
+        score=score+sc;}
+        else
+        {
+            score=score+(2*sc);
+        }
     }
 
     public void restart(){
         SceneManager.LoadScene("main");
+    }
+
+    public void x2()
+    {
+        x2multipler=true;
     }
 }

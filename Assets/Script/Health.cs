@@ -20,6 +20,10 @@ public class Health : MonoBehaviour
     GameObject rescanvas;
     [SerializeField]
     TMP_Text timer;
+    public bool invincibility;
+    [SerializeField]
+    float invitimer;
+    float invitimerfloat;
 
 
     void Start(){
@@ -30,10 +34,19 @@ public class Health : MonoBehaviour
     void Update()
     {
         healthText.SetText("Health: " + health);
+         if(invincibility)
+        {
+            if(invitimerfloat>=invitimer)
+            {
+                invincibility = false;
+                invitimerfloat=0;
+            }
+            invitimerfloat+=Time.deltaTime;
+        }
     }
 
     public void dechealth(int sub)
-    {   
+    {   if(!invincibility){
         health=health-sub;
         if (health <=0)
         { health=0; 
@@ -46,6 +59,17 @@ public class Health : MonoBehaviour
           gaman.gameObject.SetActive(false);
           gameObject.SetActive(false);
         }
+    }
+        
+    }
+    public void Uphealth(int sub)
+    {
+        health+=sub;
+    }
+
+    public void startinvi()
+    {
+        invincibility=true;
     }
     
 
