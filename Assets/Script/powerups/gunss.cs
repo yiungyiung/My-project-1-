@@ -51,7 +51,7 @@ public class gunss : MonoBehaviour
             {
                 tripguns = false;
                 tripgunfloat=0;
-                gameObject.SetActive(false);
+                
             }
             tripgunfloat+=Time.deltaTime;
         }
@@ -60,6 +60,6 @@ public class gunss : MonoBehaviour
     public void trigun()
     {
         tripguns=true;
-        gameObject.SetActive(true);
+       
     }
 }

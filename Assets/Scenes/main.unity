@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.057238244, g: 0.030333241, b: 0.016682789, a: 1}
+  m_IndirectSpecularColor: {r: 0.057340063, g: 0.030373653, b: 0.01663302, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1794,6 +1794,7 @@ GameObject:
   - component: {fileID: 1419675675}
   - component: {fileID: 1419675680}
   - component: {fileID: 1419675678}
+  - component: {fileID: 1419675681}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1896,6 +1897,25 @@ MonoBehaviour:
   timer: {fileID: 490535851}
   invincibility: 0
   invitimer: 5
+--- !u!114 &1419675681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419675674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138b0606f48b73347bc91d51cd8da386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firepoint: {fileID: 1702098245}
+  firepoint1: {fileID: 1073413671}
+  Bullet: {fileID: 3704092301934973749, guid: 53f5c0bc94a6fbf48af3334fd482fb11, type: 3}
+  firespeed: 0.1
+  bulletForce: 100
+  tripguns: 0
+  tripguntimer: 5
 --- !u!1 &1434661465
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,7 +7014,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1815399545}
-  - component: {fileID: 1815399546}
   m_Layer: 0
   m_Name: triplegunpowerup
   m_TagString: Untagged
@@ -7018,25 +7037,6 @@ Transform:
   m_Father: {fileID: 1419675677}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1815399546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815399544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 138b0606f48b73347bc91d51cd8da386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firepoint: {fileID: 1702098245}
-  firepoint1: {fileID: 1073413671}
-  Bullet: {fileID: 3704092301934973749, guid: 53f5c0bc94a6fbf48af3334fd482fb11, type: 3}
-  firespeed: 0.1
-  bulletForce: 100
-  tripguns: 0
-  tripguntimer: 5
 --- !u!1 &1828490994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7853,6 +7853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2110852101}
   - component: {fileID: 2110852100}
+  - component: {fileID: 2110852102}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -7895,3 +7896,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2110852102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110852099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07790df8d1a378e40b2a132181ff0407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab:
+  - {fileID: 4289845764745943625, guid: 523efed0c8e81364b82c71e20d2bf0cc, type: 3}
+  - {fileID: 566101110608745639, guid: 7c5167ccb73716f4a974856a5c1c3f6e, type: 3}
+  - {fileID: 8462880093567561606, guid: 629363a6cf8d21a42a74f0754ce1a674, type: 3}
+  - {fileID: 189143443009128789, guid: 8e428476074568d4e92014618d200e35, type: 3}
+  nextTimeOfspawn: 0
+  spawnspeed: 10

@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class objectmover : MonoBehaviour
-{   
+public class healthmover : MonoBehaviour
+{
+    // Start is called before the first frame update
     [SerializeField]
     float movespeed;
     [SerializeField]
     Health heal;
-    GameManager gaman;
     
     void Start()
     {
         heal=GameObject.FindWithTag("Player").GetComponent<Health>();
-        gaman= GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        
     }
     void Update()
     {
@@ -21,31 +21,18 @@ public class objectmover : MonoBehaviour
         if(transform.position.z<=-10)
         {
             Destroy(gameObject);
-            heal.dechealth(5);
+           
         }
     }
 
     void OnTriggerEnter(Collider other)
     {    
-        if(other.tag=="wall")
+        
+       if(other.tag=="Player")
         {   
-            heal.dechealth(5);
+            heal.Uphealth(20);
             Destroy(gameObject);
         }
-        else if(other.tag=="Player")
-        {   
-            heal.dechealth(10);
-            Destroy(gameObject);
-        }
-        else if(other.tag=="bullet")
-        {
-        gaman.upscore(10);
-        Destroy(other.gameObject);
-        Destroy(gameObject);
-        }
-        else{
-            Debug.Log("dumbyash");
-            Debug.Log(other.tag);
-    }
+
 }
 }
