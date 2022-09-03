@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {   
     [SerializeField]
     GameObject prefab ;
+    [SerializeField]
     float nextTimeOfspawn= 0;
     float randomposx;
     float randomposy;
@@ -78,7 +79,11 @@ public class GameManager : MonoBehaviour
     }
 
     public void x2()
-    {
-        x2multipler=true;
+    {   if(!x2multipler)
+        {x2multipler=true;} 
+        else
+        {
+            x2timerfloat=0;
+        }
     }
 }

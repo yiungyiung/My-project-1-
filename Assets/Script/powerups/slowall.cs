@@ -21,19 +21,24 @@ public class slowall : MonoBehaviour
                 slowallfloat=0;
                 slowerup();
             }
-            slower();
-           slowallfloat+=Time.deltaTime;}
+            else
+            {
+                
+            
+           slower();
+           slowallfloat+=Time.deltaTime;}}
     }
 
-    void slowstart()
-    {
-        slowalll = true;
+    public void slowstart()
+    {   if(!slowalll)
+    { slowalll = true;}
+    else{slowallfloat=0;}
         
     }
     void slower()
     {
     foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Enemy")){
-            obj.GetComponent<mover>().movespeed=0.1f;
+            obj.GetComponent<mover>().movespeed=0.3f;
         }
     }
     void slowerup()

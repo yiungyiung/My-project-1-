@@ -58,8 +58,14 @@ public class gunss : MonoBehaviour
     
     }
     public void trigun()
+    {   if(!tripguns)
     {
-        tripguns=true;
+        tripguns=true;}
+
+        else
+        {
+          tripgunfloat=0;
+        }
        
     }
 }

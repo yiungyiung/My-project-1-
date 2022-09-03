@@ -69,8 +69,13 @@ public class Health : MonoBehaviour
     }
 
     public void startinvi()
-    {
-        invincibility=true;
+    {   
+        if(!invincibility)
+        {invincibility=true;}
+        else
+        {
+            invitimerfloat=0;
+        }
     }
     
 
