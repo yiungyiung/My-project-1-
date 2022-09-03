@@ -49,7 +49,8 @@ public class Health : MonoBehaviour
     {   if(!invincibility){
         health=health-sub;
         if (health <=0)
-        { health=0; 
+        { health=0;
+          healthText.SetText("Health: " + health); 
           finalscore=(int)gaman.timer + gaman.score;
           kills=gaman.kills;
           timer.SetText("Time: "+(int)gaman.timer+" sec");

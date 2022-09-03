@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class objectmover : MonoBehaviour
 {   
-    [SerializeField]
-    float movespeed;
+ 
     [SerializeField]
     Health heal;
     GameManager gaman;
@@ -17,7 +16,7 @@ public class objectmover : MonoBehaviour
     }
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position,new Vector3(transform.position.x,transform.position.y,-25),movespeed/100);
+        
         if(transform.position.z<=-10)
         {
             Destroy(gameObject);

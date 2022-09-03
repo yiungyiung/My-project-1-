@@ -5,8 +5,7 @@ using UnityEngine;
 public class healthmover : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
-    float movespeed;
+
     [SerializeField]
     Health heal;
     
@@ -17,7 +16,7 @@ public class healthmover : MonoBehaviour
     }
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position,new Vector3(transform.position.x,transform.position.y,-25),movespeed/100);
+        
         if(transform.position.z<=-10)
         {
             Destroy(gameObject);

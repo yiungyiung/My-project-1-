@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 898107423171647956}
   - component: {fileID: 898107423171647957}
   - component: {fileID: 898107423171647962}
+  - component: {fileID: -3252188101865381458}
   m_Layer: 0
   m_Name: dirt
   m_TagString: Enemy
@@ -125,5 +126,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e32e2b0182f31a4c9d2fc2d42651481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 0.8
   heal: {fileID: 0}
+--- !u!114 &-3252188101865381458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898107423171647963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39226a74744ae347a2b3c02b750b7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movespeed: 0.8

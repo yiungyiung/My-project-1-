@@ -5,8 +5,7 @@ using UnityEngine;
 public class x2mover : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
-    float movespeed;
+
     GameManager gaman;
     
     void Start()
@@ -16,7 +15,7 @@ public class x2mover : MonoBehaviour
     }
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position,new Vector3(transform.position.x,transform.position.y,-25),movespeed/100);
+        
         if(transform.position.z<=-10)
         {
             Destroy(gameObject);

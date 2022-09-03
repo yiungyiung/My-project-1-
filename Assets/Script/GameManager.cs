@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        randomposx=Random.Range(-21,21);
-        randomposy=Random.Range(-11,11);
+        randomposx=Random.Range(-21,22);
+        randomposy=Random.Range(-11,12);
 
         if(Time.time>=nextTimeOfspawn)
         {
