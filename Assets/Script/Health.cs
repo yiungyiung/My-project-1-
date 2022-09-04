@@ -50,6 +50,9 @@ public class Health : MonoBehaviour
         health=health-sub;
         if (health <=0)
         { health=0;
+          foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Enemy")){
+            Destroy(obj);
+        }
           healthText.SetText("Health: " + health); 
           finalscore=(int)gaman.timer + gaman.score;
           kills=gaman.kills;

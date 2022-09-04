@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     float randomposy;
     [SerializeField]
     float spawnspeed;
+    [SerializeField]
+    float assspeed;
     float randomsize;
     [SerializeField]
     TMP_Text timeText;
@@ -27,29 +29,41 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     float x2timer;
     float x2timerfloat;
+    float timerupper;
 
     void Start()
     {   
-        
+        timerupper =15;
         kills=0;
         timer=0;
+        spawnspeed=assspeed;
     }
     void Update()
     {
         randomposx=Random.Range(-21,22);
         randomposy=Random.Range(-11,12);
 
-        if(Time.time>=nextTimeOfspawn)
+        
+        timer=timer+Time.deltaTime;
+        timeText.SetText(""+System.Math.Round(timer,1));
+        scoreText.SetText("Score: "+ (score+(int)timer));
+        if(timer>=nextTimeOfspawn)
         {
-            nextTimeOfspawn = Time.time + spawnspeed;
+            nextTimeOfspawn = (float)timer + spawnspeed;
+            
             GameObject spawned = Instantiate(prefab,new Vector3(randomposx,randomposy,100),Quaternion.identity);
             randomsize=Random.Range(3,10);
             spawned.transform.localScale=new Vector3(randomsize,randomsize,randomsize);
 
+
         }
-        timer=timer+Time.deltaTime;
-        timeText.SetText(""+System.Math.Round(timer,1));
-        scoreText.SetText("Score: "+ (score+(int)timer));
+
+        if(timer>timerupper && spawnspeed>0.8)
+        {
+            spawnspeed=spawnspeed-0.2f;
+            timerupper=timerupper+15;
+
+        }
 
         if(x2multipler)
         {
@@ -70,7 +84,7 @@ public class GameManager : MonoBehaviour
         score=score+sc;}
         else
         {
-            score=score+(2*sc);
+            score=score+(4*sc);
         }
     }
 

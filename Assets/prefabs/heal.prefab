@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6016890332989233963}
   m_Layer: 0
   m_Name: heal
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,3 +140,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 0.8
+  orimovespeed: 0
+  assignedspeed: 0.8

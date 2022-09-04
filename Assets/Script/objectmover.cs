@@ -33,6 +33,7 @@ public class objectmover : MonoBehaviour
         }
         else if(other.tag=="Player")
         {   
+            gaman.upscore(10);
             heal.dechealth(10);
             Destroy(gameObject);
         }

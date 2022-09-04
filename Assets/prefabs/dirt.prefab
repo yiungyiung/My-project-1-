@@ -140,3 +140,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 0.8
+  orimovespeed: 0
+  assignedspeed: 0.8

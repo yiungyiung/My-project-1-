@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3252188101865381458, guid: c2c54dc9d90b41f40a4118deeba2bab1, type: 3}
+      propertyPath: movespeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -3252188101865381458, guid: c2c54dc9d90b41f40a4118deeba2bab1, type: 3}
+      propertyPath: assignedspeed
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 898107423171647953, guid: c2c54dc9d90b41f40a4118deeba2bab1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ff31d54925869694f91593f3ebe64933, type: 2}
     - target: {fileID: 898107423171647963, guid: c2c54dc9d90b41f40a4118deeba2bab1, type: 3}
       propertyPath: m_Name
-      value: dirt Variant
+      value: dirt Variant 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2c54dc9d90b41f40a4118deeba2bab1, type: 3}

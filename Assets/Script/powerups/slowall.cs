@@ -44,7 +44,7 @@ public class slowall : MonoBehaviour
     void slowerup()
     {
     foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Enemy")){
-            obj.GetComponent<mover>().movespeed=0.8f;
+            obj.GetComponent<mover>().movespeed= obj.GetComponent<mover>().orimovespeed;
         }
     }
 }
