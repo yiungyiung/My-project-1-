@@ -10,15 +10,27 @@ public class slowall : MonoBehaviour
     [SerializeField]
     float slowalltimer;
     float slowallfloat;
+    public ParticleSystem ps;
+    
+
+    
+
+    void Start()
+    {   
+        
+    }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+
         if(slowalll){
             if(slowallfloat>=slowalltimer)
             {
                 slowalll = false;
                 slowallfloat=0;
+                 var main = ps.main;
+                 main.simulationSpeed = 1f;
                 slowerup();
             }
             else
@@ -31,7 +43,9 @@ public class slowall : MonoBehaviour
 
     public void slowstart()
     {   if(!slowalll)
-    { slowalll = true;}
+    { slowalll = true;
+         var main = ps.main;
+         main.simulationSpeed =0.3f;}
     else{slowallfloat=0;}
         
     }
