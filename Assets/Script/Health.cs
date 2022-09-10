@@ -24,16 +24,20 @@ public class Health : MonoBehaviour
     [SerializeField]
     float invitimer;
     float invitimerfloat;
+    [SerializeField]
+    GameObject prefab;
+    emotispawner emotis;
 
 
     void Start(){
         gaman= GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        emotis=gameObject.GetComponent<emotispawner>();
     }
     
 
     void Update()
     {
-        healthText.SetText("Health: " + health);
+        healthText.SetText("" + health);
          if(invincibility)
         {
             if(invitimerfloat>=invitimer)
@@ -48,12 +52,14 @@ public class Health : MonoBehaviour
     public void dechealth(int sub)
     {   if(!invincibility){
         health=health-sub;
+         emotis.spawner(prefab);
+
         if (health <=0)
         { health=0;
           foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Enemy")){
             Destroy(obj);
         }
-          healthText.SetText("Health: " + health); 
+          healthText.SetText("" + health); 
           finalscore=(int)gaman.timer + gaman.score;
           kills=gaman.kills;
           timer.SetText("Time: "+(int)gaman.timer+" sec");

@@ -7,10 +7,14 @@ public class invimover : MonoBehaviour
 
     [SerializeField]
     Health heal;
+    [SerializeField]
+    GameObject prefab;
+    emotispawner emotis;
     
     void Start()
     {
         heal=GameObject.FindWithTag("Player").GetComponent<Health>();
+        emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
         
     }
     void Update()
@@ -28,6 +32,7 @@ public class invimover : MonoBehaviour
         
        if(other.tag=="Player")
         {   
+            emotis.spawner(prefab);
             heal.startinvi();
             Destroy(gameObject);
         }

@@ -13,7 +13,7 @@ public class mover : MonoBehaviour
 
     void Start()
     {
-       movespeed =((float)(GameObject.FindWithTag("GameController").GetComponent<GameManager>().timer)/450)+assignedspeed;
+       movespeed =((float)(GameObject.FindWithTag("GameController").GetComponent<GameManager>().timer)/600)+assignedspeed;
        orimovespeed =movespeed;
     }
     

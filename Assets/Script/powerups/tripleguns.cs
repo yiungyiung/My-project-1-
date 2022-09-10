@@ -7,10 +7,14 @@ public class tripleguns : MonoBehaviour
 
     [SerializeField]
     gunss gun;
+    [SerializeField]
+    GameObject prefab;
+    emotispawner emotis;
     
     void Start()
     {
         gun=GameObject.FindWithTag("Player").GetComponent<gunss>();
+        emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
         
     }
     void Update()
@@ -28,6 +32,7 @@ public class tripleguns : MonoBehaviour
         
        if(other.tag=="Player")
         {   
+            emotis.spawner(prefab);
             gun.trigun();
             Destroy(gameObject);
         }

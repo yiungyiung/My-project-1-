@@ -11,14 +11,7 @@ public class slowall : MonoBehaviour
     float slowalltimer;
     float slowallfloat;
     public ParticleSystem ps;
-    
-
-    
-
-    void Start()
-    {   
-        
-    }
+    syboxrotate rot;
 
     // Update is called once per frame
     void Update()
@@ -44,6 +37,7 @@ public class slowall : MonoBehaviour
     public void slowstart()
     {   if(!slowalll)
     { slowalll = true;
+      
          var main = ps.main;
          main.simulationSpeed =0.3f;}
     else{slowallfloat=0;}
@@ -56,7 +50,8 @@ public class slowall : MonoBehaviour
         }
     }
     void slowerup()
-    {
+    {   
+      
     foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Enemy")){
             obj.GetComponent<mover>().movespeed= obj.GetComponent<mover>().orimovespeed;
         }

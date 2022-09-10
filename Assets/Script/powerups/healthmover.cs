@@ -8,10 +8,14 @@ public class healthmover : MonoBehaviour
 
     [SerializeField]
     Health heal;
+    [SerializeField]
+    GameObject prefab;
+    emotispawner emotis;
     
     void Start()
     {
         heal=GameObject.FindWithTag("Player").GetComponent<Health>();
+        emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
         
     }
     void Update()
@@ -30,6 +34,7 @@ public class healthmover : MonoBehaviour
        if(other.tag=="Player")
         {   
             heal.Uphealth(20);
+            emotis.spawner(prefab);
             Destroy(gameObject);
         }
 

@@ -30,10 +30,14 @@ public class GameManager : MonoBehaviour
     float x2timer;
     float x2timerfloat;
     float timerupper;
+    [SerializeField]
+    GameObject prefabkiller;
+    emotispawner emotis;
 
     void Start()
     {   
-        timerupper =15;
+        emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
+        timerupper =20;
         kills=0;
         timer=0;
         spawnspeed=assspeed;
@@ -45,13 +49,13 @@ public class GameManager : MonoBehaviour
 
         
         timer=timer+Time.deltaTime;
-        timeText.SetText(""+System.Math.Round(timer,1));
-        scoreText.SetText("Score: "+ (score+(int)timer));
+        timeText.SetText(""+(float)System.Math.Round(timer,1));
+        scoreText.SetText(""+ (score+(int)timer));
         if(timer>=nextTimeOfspawn)
         {
             nextTimeOfspawn = (float)timer + spawnspeed;
             
-            GameObject spawned = Instantiate(prefab,new Vector3(randomposx,randomposy,100),Quaternion.identity);
+            GameObject spawned = Instantiate(prefab,new Vector3(randomposx,randomposy,175),Quaternion.identity);
             randomsize=Random.Range(3,10);
             spawned.transform.localScale=new Vector3(randomsize,randomsize,randomsize);
 
@@ -60,8 +64,8 @@ public class GameManager : MonoBehaviour
 
         if(timer>timerupper && spawnspeed>0.8)
         {
-            spawnspeed=spawnspeed-0.2f;
-            timerupper=timerupper+15;
+            spawnspeed=spawnspeed-0.1f;
+            timerupper=timerupper+20;
 
         }
 
@@ -78,6 +82,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void upscore(int sc){
+         emotis.spawner(prefabkiller);
         kills+=1;
         if(!x2multipler)
         {

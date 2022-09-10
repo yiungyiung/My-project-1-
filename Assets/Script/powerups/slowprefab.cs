@@ -5,10 +5,13 @@ using UnityEngine;
 public class slowprefab : MonoBehaviour
 {
     slowall slowed;
-    
+    [SerializeField]
+    GameObject prefab;
+    emotispawner emotis;
     void Start()
     {
         slowed= GameObject.FindWithTag("GameController").GetComponent<slowall>();
+        emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
         
     }
     void Update()
@@ -27,7 +30,8 @@ public class slowprefab : MonoBehaviour
        if(other.tag=="Player")
         {   
            slowed.slowstart();
-            Destroy(gameObject);
+           emotis.spawner(prefab);
+           Destroy(gameObject);
         }
 
 }

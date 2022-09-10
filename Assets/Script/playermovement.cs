@@ -6,8 +6,8 @@ public class playermovement : MonoBehaviour
 {   
     [SerializeField]
     Rigidbody rb;
-    float horimove;
-    float vertimove;
+    public float horimove;
+    public float vertimove;
     Vector3 movedirec;
     [SerializeField]
     float speed;

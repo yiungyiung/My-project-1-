@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heal: {fileID: 0}
+  prefab: {fileID: 6983319371356622287, guid: 1bd223f53a659cd4b861c053aef17e03, type: 3}
 --- !u!114 &6016890332989233963
 MonoBehaviour:
   m_ObjectHideFlags: 0
