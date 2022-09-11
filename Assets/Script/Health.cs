@@ -58,15 +58,17 @@ public class Health : MonoBehaviour
         { health=0;
           foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Enemy")){
             Destroy(obj);
-        }
+        }  
           healthText.SetText("" + health); 
           finalscore=(int)gaman.timer + gaman.score;
+          gaman.scoreText.SetText("" + finalscore);
           kills=gaman.kills;
           timer.SetText("Time: "+(int)gaman.timer+" sec");
           rescanvas.SetActive(true);
           killer.SetText("KILLED:" + kills);
           scorer.SetText("SCORE: " + finalscore);
-          gaman.gameObject.SetActive(false);
+          gaman.enabled=false;
+          GameObject.FindWithTag("GameController").GetComponent<powerupgenrator>().enabled=false;
           gameObject.SetActive(false);
         }
     }

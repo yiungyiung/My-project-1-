@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     TMP_Text timeText;
     public double timer;
     [SerializeField]
-    TMP_Text scoreText;
+   public TMP_Text scoreText;
     public int score;
     public int kills;
     [SerializeField]
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if(timer>timerupper && spawnspeed>0.8)
+        if(timer>timerupper && spawnspeed>0.6)
         {
             spawnspeed=spawnspeed-0.1f;
             timerupper=timerupper+20;
@@ -95,6 +95,10 @@ public class GameManager : MonoBehaviour
 
     public void restart(){
         SceneManager.LoadScene("main");
+    }
+
+    public void menu(){
+        SceneManager.LoadScene("menu");
     }
 
     public void x2()

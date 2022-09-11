@@ -17,33 +17,33 @@ public class serialarduinocom : MonoBehaviour
         serial.Open();
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {   
 
         recstring=serial.ReadLine();
         string[] data =recstring.Split(',');
-        if(float.Parse(data[0])>1)
+        if(float.Parse(data[0])>3)
         {   
 
-            pla.horimove=-1;
-        }
-        else if(float.Parse(data[0])<-3)
-        {
             pla.horimove=1;
+        }
+        else if(float.Parse(data[0])<-5)
+        {
+            pla.horimove=-1;
         }
         else
         {
             pla.horimove=0;
         }
 
-        if(float.Parse(data[1])>8)
+        if(float.Parse(data[1])>8.5)
         {   
 
-            pla.vertimove=1;
-        }
-        else if(float.Parse(data[1])<7)
-        {
             pla.vertimove=-1;
+        }
+        else if(float.Parse(data[1])<6.5)
+        {
+            pla.vertimove=1;
         }
         else
         {
