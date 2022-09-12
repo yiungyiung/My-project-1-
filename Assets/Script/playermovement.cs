@@ -19,14 +19,16 @@ public class playermovement : MonoBehaviour
   
     void FixedUpdate()
     {
+             
+        horimove=SimpleInput.GetAxisRaw("Horizontal");
+        vertimove=SimpleInput.GetAxisRaw("Vertical");
         
-        horimove=Input.GetAxisRaw("Horizontal");
-        vertimove=Input.GetAxisRaw("Vertical");
-         if(horimove==-1)
+       
+         if(horimove<-0.2)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.Euler(transform.rotation.x,transform.rotation.y,30),0.1f);
         }
-        else if(horimove==1)
+        else if(horimove>0.2)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.Euler(transform.rotation.x,transform.rotation.y,-30),0.1f);
         }

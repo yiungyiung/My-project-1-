@@ -20,35 +20,11 @@ public class SampleMessageListener : MonoBehaviour
     public playermovement pla;
     // Invoked when a line of data is received from the serial device.
     void OnMessageArrived(string msg)
-    {
+    {   
+        Debug.Log(msg);
         string[] data =msg.Split(',');
-        if(float.Parse(data[0])>3)
-        {   
-
-            pla.horimove=-1;
-        }
-        else if(float.Parse(data[0])<-5)
-        {
-            pla.horimove=1;
-        }
-        else
-        {
-            pla.horimove=0;
-        }
-
-        if(float.Parse(data[1])>9)
-        {   
-
-            pla.vertimove=1;
-        }
-        else if(float.Parse(data[1])<6)
-        {
-            pla.vertimove=-1;
-        }
-        else
-        {
-            pla.vertimove=0;
-        }
+        pla.horimove=-(float.Parse(data[0])/10);
+        pla.vertimove=(float.Parse(data[1])/10);
 
     }
 
