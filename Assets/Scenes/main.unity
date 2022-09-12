@@ -1335,6 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1617735706}
+  interactable: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,6 +2596,9 @@ MonoBehaviour:
   invincibility: 0
   invitimer: 5
   prefab: {fileID: 6983319371356622287, guid: 1f5e3542b32f0c74eb8c61e1cab6fa1f, type: 3}
+  myButton: {fileID: 618563155}
+  myButton1: {fileID: 421948022}
+  btns: {fileID: 959739111}
 --- !u!114 &1419675681
 MonoBehaviour:
   m_ObjectHideFlags: 0

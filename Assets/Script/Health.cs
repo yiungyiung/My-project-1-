@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -27,6 +28,12 @@ public class Health : MonoBehaviour
     [SerializeField]
     GameObject prefab;
     emotispawner emotis;
+    [SerializeField]
+    Button myButton;
+    [SerializeField]
+    Button myButton1;
+    [SerializeField]
+    btncancel btns;
 
 
     void Start(){
@@ -65,6 +72,9 @@ public class Health : MonoBehaviour
           kills=gaman.kills;
           timer.SetText("Time: "+(int)gaman.timer+" sec");
           rescanvas.SetActive(true);
+          myButton.interactable = false;
+          myButton1.interactable = false;
+          btns.interactable = false;
           killer.SetText("KILLED:" + kills);
           scorer.SetText("SCORE: " + finalscore);
           gaman.enabled=false;
