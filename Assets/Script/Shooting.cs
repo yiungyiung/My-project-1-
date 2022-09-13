@@ -14,6 +14,8 @@ public class Shooting : MonoBehaviour
      float bulletForce;
      float nextTimeOfFire= 0;
      bool canShoot=false;
+     [SerializeField]
+     AudioSource shootingsound;
     
     void Update()
     {   
@@ -27,9 +29,11 @@ public class Shooting : MonoBehaviour
       }
         if(canShoot && Time.time>=nextTimeOfFire)
         {
+        shootingsound.Stop();
         nextTimeOfFire = Time.time + firespeed;
         GameObject laserBullet;
         laserBullet= Instantiate(Bullet,firepoint.position,Quaternion.identity);
+        shootingsound.Play();
         Rigidbody body= laserBullet.GetComponent<Rigidbody>();
         body.AddForce(Vector3.forward*bulletForce,ForceMode.Impulse);}
     }

@@ -21,6 +21,7 @@ public class gunss : MonoBehaviour
     [SerializeField]
     float tripguntimer;
     float tripgunfloat;
+ 
     
     void Update()
     {   
@@ -36,12 +37,14 @@ public class gunss : MonoBehaviour
       }
         if(canShoot && Time.time>=nextTimeOfFire)
         {
+     
         nextTimeOfFire = Time.time + firespeed;
         GameObject laserBullet;
         laserBullet= Instantiate(Bullet,firepoint.position,Quaternion.identity);
         Rigidbody body= laserBullet.GetComponent<Rigidbody>();
         body.AddForce(Vector3.forward*bulletForce,ForceMode.Impulse);
         GameObject laserBullet1;
+      
         laserBullet1= Instantiate(Bullet,firepoint1.position,Quaternion.identity);
         Rigidbody body1= laserBullet1.GetComponent<Rigidbody>();
         body1.AddForce(Vector3.forward*bulletForce,ForceMode.Impulse);

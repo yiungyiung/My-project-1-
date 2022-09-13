@@ -36,7 +36,7 @@ public class playermovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.Euler(transform.rotation.x,transform.rotation.y,0),0.1f);
         }
-        movedirec = Vector3.up*vertimove + Vector3.right * horimove;
-        rb.AddForce(movedirec*speed,ForceMode.Force);
+        movedirec = Vector3.up*vertimove*speed/1.5f + Vector3.right * horimove*speed/1.2f;
+        rb.AddForce(movedirec,ForceMode.Acceleration);
     }
 }
