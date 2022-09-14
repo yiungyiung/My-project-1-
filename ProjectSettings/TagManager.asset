@@ -8,6 +8,8 @@ TagManager:
   - wall
   - bullet
   - stickers
+  - sound
+  - sound1
   layers:
   - Default
   - TransparentFX

@@ -10,16 +10,19 @@ public class objectmover : MonoBehaviour
     GameManager gaman;
     [SerializeField]
     GameObject explosion;
+  
+    AudioSource sound;
     
     void Start()
-    {
+    {   
+        sound= GameObject.FindWithTag("sound").GetComponent<AudioSource>();
         heal=GameObject.FindWithTag("Player").GetComponent<Health>();
         gaman= GameObject.FindWithTag("GameController").GetComponent<GameManager>();
     }
     void Update()
     {
         
-        if(transform.position.z<=-10)
+        if(transform.position.z<=-20)
         {
             Destroy(gameObject);
             heal.dechealth(5);
@@ -34,15 +37,18 @@ public class objectmover : MonoBehaviour
             Destroy(gameObject);
         }
         else if(other.tag=="Player")
-        {   
+        {   sound.Play();
             gaman.upscore(10);
             heal.dechealth(10);
+            
             Instantiate(explosion,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
         else if(other.tag=="bullet")
         {
+        sound.Play();
         gaman.upscore(10);
+        
         Instantiate(explosion,transform.position,Quaternion.identity);
         Destroy(other.gameObject);
         Destroy(gameObject);

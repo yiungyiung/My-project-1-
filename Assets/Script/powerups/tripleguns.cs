@@ -10,9 +10,13 @@ public class tripleguns : MonoBehaviour
     [SerializeField]
     GameObject prefab;
     emotispawner emotis;
+    [SerializeField]
+    GameObject particle;
+     AudioSource sound;
     
     void Start()
-    {
+    {   
+        sound= GameObject.FindWithTag("sound1").GetComponent<AudioSource>();
         gun=GameObject.FindWithTag("Player").GetComponent<gunss>();
         emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
         
@@ -20,7 +24,7 @@ public class tripleguns : MonoBehaviour
     void Update()
     {
         
-        if(transform.position.z<=-10)
+        if(transform.position.z<=-20)
         {
             Destroy(gameObject);
            
@@ -32,7 +36,9 @@ public class tripleguns : MonoBehaviour
         
        if(other.tag=="Player")
         {   
+            sound.Play();
             emotis.spawner(prefab);
+            Instantiate(particle,transform.position,Quaternion.identity);
             gun.trigun();
             Destroy(gameObject);
         }

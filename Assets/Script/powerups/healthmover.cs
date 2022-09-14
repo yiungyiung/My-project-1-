@@ -10,10 +10,14 @@ public class healthmover : MonoBehaviour
     Health heal;
     [SerializeField]
     GameObject prefab;
+    [SerializeField]
+    GameObject particle;
     emotispawner emotis;
+     AudioSource sound;
     
     void Start()
-    {
+    {   
+        sound= GameObject.FindWithTag("sound1").GetComponent<AudioSource>();
         heal=GameObject.FindWithTag("Player").GetComponent<Health>();
         emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
         
@@ -21,7 +25,7 @@ public class healthmover : MonoBehaviour
     void Update()
     {
         
-        if(transform.position.z<=-10)
+        if(transform.position.z<=-20)
         {
             Destroy(gameObject);
            
@@ -33,7 +37,9 @@ public class healthmover : MonoBehaviour
         
        if(other.tag=="Player")
         {   
+            sound.Play();
             heal.Uphealth(20);
+            Instantiate(particle,transform.position,Quaternion.identity);
             emotis.spawner(prefab);
             Destroy(gameObject);
         }

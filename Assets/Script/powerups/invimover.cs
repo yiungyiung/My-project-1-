@@ -9,10 +9,14 @@ public class invimover : MonoBehaviour
     Health heal;
     [SerializeField]
     GameObject prefab;
+    [SerializeField]
+    GameObject particle;
     emotispawner emotis;
+     AudioSource sound;
     
     void Start()
-    {
+    {   
+        sound= GameObject.FindWithTag("sound1").GetComponent<AudioSource>();
         heal=GameObject.FindWithTag("Player").GetComponent<Health>();
         emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
         
@@ -20,7 +24,7 @@ public class invimover : MonoBehaviour
     void Update()
     {
        
-        if(transform.position.z<=-10)
+        if(transform.position.z<=-20)
         {
             Destroy(gameObject);
            
@@ -32,7 +36,9 @@ public class invimover : MonoBehaviour
         
        if(other.tag=="Player")
         {   
+            sound.Play();
             emotis.spawner(prefab);
+            Instantiate(particle,transform.position,Quaternion.identity);
             heal.startinvi();
             Destroy(gameObject);
         }

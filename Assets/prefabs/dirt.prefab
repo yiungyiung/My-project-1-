@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heal: {fileID: 0}
   explosion: {fileID: 8928978760652634489, guid: d5328c6c45e929b439ba0628621aae22, type: 3}
+  sound: {fileID: 0}
 --- !u!114 &-3252188101865381458
 MonoBehaviour:
   m_ObjectHideFlags: 0

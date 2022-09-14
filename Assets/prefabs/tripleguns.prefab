@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 0}
   prefab: {fileID: 6983319371356622287, guid: 779315a117df11e438e7af68fbe97a4d, type: 3}
+  particle: {fileID: 8928978760652634489, guid: b3d05b5ca893be64fa2341d8db84971e, type: 3}
 --- !u!114 &6312123445924133493
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heal: {fileID: 0}
   prefab: {fileID: 6983319371356622287, guid: 8adce55bf5ce20149b9829a6c84fde1e, type: 3}
+  particle: {fileID: 8928978760652634489, guid: b3d05b5ca893be64fa2341d8db84971e, type: 3}
 --- !u!114 &-3950511705509903625
 MonoBehaviour:
   m_ObjectHideFlags: 0

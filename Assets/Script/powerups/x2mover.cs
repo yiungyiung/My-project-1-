@@ -10,16 +10,20 @@ public class x2mover : MonoBehaviour
     [SerializeField]
     GameObject prefab;
     emotispawner emotis;
+    [SerializeField]
+    GameObject particle;
+     AudioSource sound;
     
     void Start()
-    {
+    {   
+        sound= GameObject.FindWithTag("sound1").GetComponent<AudioSource>();
         gaman= GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
     }
     void Update()
     {
         
-        if(transform.position.z<=-10)
+        if(transform.position.z<=-20)
         {
             Destroy(gameObject);
            
@@ -31,8 +35,10 @@ public class x2mover : MonoBehaviour
         
        if(other.tag=="Player")
         {   
+            sound.Play();
             gaman.x2();
             emotis.spawner(prefab);
+            Instantiate(particle,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
 

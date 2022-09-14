@@ -8,8 +8,12 @@ public class slowprefab : MonoBehaviour
     [SerializeField]
     GameObject prefab;
     emotispawner emotis;
+    [SerializeField]
+    GameObject particle;
+     AudioSource sound;
     void Start()
-    {
+    {   
+        sound= GameObject.FindWithTag("sound1").GetComponent<AudioSource>();
         slowed= GameObject.FindWithTag("GameController").GetComponent<slowall>();
         emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
         
@@ -17,7 +21,7 @@ public class slowprefab : MonoBehaviour
     void Update()
     {
         
-        if(transform.position.z<=-10)
+        if(transform.position.z<=-20)
         {
             Destroy(gameObject);
            
@@ -29,7 +33,9 @@ public class slowprefab : MonoBehaviour
         
        if(other.tag=="Player")
         {   
+            sound.Play();
            slowed.slowstart();
+           Instantiate(particle,transform.position,Quaternion.identity);
            emotis.spawner(prefab);
            Destroy(gameObject);
         }
