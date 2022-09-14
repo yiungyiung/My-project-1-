@@ -8,6 +8,8 @@ public class objectmover : MonoBehaviour
     [SerializeField]
     Health heal;
     GameManager gaman;
+    [SerializeField]
+    GameObject explosion;
     
     void Start()
     {
@@ -35,11 +37,13 @@ public class objectmover : MonoBehaviour
         {   
             gaman.upscore(10);
             heal.dechealth(10);
+            Instantiate(explosion,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
         else if(other.tag=="bullet")
         {
         gaman.upscore(10);
+        Instantiate(explosion,transform.position,Quaternion.identity);
         Destroy(other.gameObject);
         Destroy(gameObject);
         }
