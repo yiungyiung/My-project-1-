@@ -19,6 +19,6 @@ public class stickers : MonoBehaviour
         {
             Destroy(gameObject);
         }   
-        transform.localScale=Vector3.Lerp(transform.localScale,new Vector3(0.5f,0.5f,0.5f),0.1f);
+        transform.localScale=Vector3.Lerp(transform.localScale,new Vector3(0.3f,0.3f,0.3f),0.1f);
     }
 }
