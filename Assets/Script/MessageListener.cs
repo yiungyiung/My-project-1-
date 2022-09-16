@@ -9,10 +9,10 @@ public class MessageListener : MonoBehaviour
     // Invoked when a line of data is received from the serial device.
     void OnMessageArrived(string msg)
     {   
-        /*Debug.Log(msg);
+        Debug.Log(msg);
         string[] data =msg.Split(',');
-        pla.horimove=-(float.Parse(data[0])/10);
-        pla.vertimove=(float.Parse(data[1])/10);*/
+        pla.horimove=-(float.Parse(data[0])/10*1.2f);
+        pla.vertimove=(float.Parse(data[1])/10*1.2f);
 
     }
 
