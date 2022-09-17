@@ -21,15 +21,7 @@ public class invimover : MonoBehaviour
         emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
         
     }
-    void Update()
-    {
-       
-        if(transform.position.z<=-20)
-        {
-            Destroy(gameObject);
-           
-        }
-    }
+   
 
     void OnTriggerEnter(Collider other)
     {    

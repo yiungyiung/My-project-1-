@@ -20,15 +20,7 @@ public class x2mover : MonoBehaviour
         gaman= GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         emotis=GameObject.FindWithTag("Player").GetComponent<emotispawner>();
     }
-    void Update()
-    {
-        
-        if(transform.position.z<=-20)
-        {
-            Destroy(gameObject);
-           
-        }
-    }
+   
 
     void OnTriggerEnter(Collider other)
     {    

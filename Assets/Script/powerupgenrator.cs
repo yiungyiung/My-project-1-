@@ -33,7 +33,7 @@ public class powerupgenrator : MonoBehaviour
         {
             nextTimeOfspawn = (float)tme.timer + spawnspeed;
             spawnspeed =Random.Range(6,10);
-            GameObject spawned = Instantiate(prefab[Random.Range(0,prefab.Length)],new Vector3(randomposx,randomposy,100),transform.rotation *  Quaternion.Euler(0, 180, 0));
+            GameObject spawned = Instantiate(prefab[Random.Range(0,prefab.Length)],new Vector3(randomposx,randomposy,175),transform.rotation *  Quaternion.Euler(0, 180, 0));
             randomsize=Random.Range(5,6);
             spawned.transform.localScale=new Vector3(randomsize,randomsize,randomsize);
 

@@ -21,11 +21,11 @@ public class Shooting : MonoBehaviour
     {   
         if(Input.GetButton("Fire1")) //When the mouse button is pressed 
       {
-        canShoot = true;
+        shoottrue();
       }
       if(Input.GetButtonUp("Fire1"))//when the mouse button is lifted
       {
-      canShoot = false;
+      shootfalse();
       }
         if(canShoot && Time.time>=nextTimeOfFire)
         {
@@ -37,6 +37,14 @@ public class Shooting : MonoBehaviour
         Rigidbody body= laserBullet.GetComponent<Rigidbody>();
         body.AddForce(Vector3.forward*bulletForce,ForceMode.Impulse);}
     }
+
+    public void shoottrue(){
+      canShoot = true;
+    }
+    public void shootfalse(){
+      canShoot = false;
+    }
+
 
     
         

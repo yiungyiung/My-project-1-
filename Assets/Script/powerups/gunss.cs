@@ -27,13 +27,13 @@ public class gunss : MonoBehaviour
     {   
       if(tripguns)
         {
-        if(Input.GetButton("Fire1")) //When the mouse button is pressed 
+       if(Input.GetButton("Fire1")) //When the mouse button is pressed 
       {
-        canShoot = true;
+        shoottrue();
       }
       if(Input.GetButtonUp("Fire1"))//when the mouse button is lifted
       {
-      canShoot = false;
+      shootfalse();
       }
         if(canShoot && Time.time>=nextTimeOfFire)
         {
@@ -70,5 +70,12 @@ public class gunss : MonoBehaviour
           tripgunfloat=0;
         }
        
+    }
+
+    public void shoottrue(){
+      canShoot = true;
+    }
+   public void shootfalse(){
+      canShoot = false;
     }
 }

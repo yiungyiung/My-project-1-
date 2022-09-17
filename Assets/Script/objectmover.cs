@@ -5,7 +5,7 @@ using UnityEngine;
 public class objectmover : MonoBehaviour
 {   
  
-    [SerializeField]
+        [SerializeField]
     Health heal;
     GameManager gaman;
     [SerializeField]
@@ -19,16 +19,7 @@ public class objectmover : MonoBehaviour
         heal=GameObject.FindWithTag("Player").GetComponent<Health>();
         gaman= GameObject.FindWithTag("GameController").GetComponent<GameManager>();
     }
-    void Update()
-    {
-        
-        if(transform.position.z<=-20)
-        {
-            Destroy(gameObject);
-            heal.dechealth(5);
-        }
-    }
-
+   
     void OnTriggerEnter(Collider other)
     {    
         if(other.tag=="wall")

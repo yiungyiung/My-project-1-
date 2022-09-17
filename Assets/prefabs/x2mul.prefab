@@ -143,3 +143,6 @@ MonoBehaviour:
   movespeed: 0.8
   orimovespeed: 0
   assignedspeed: 0.8
+  dist: -10
+  obs: 0
+  heali: {fileID: 0}

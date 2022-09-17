@@ -12,7 +12,7 @@ public class MessageListener : MonoBehaviour
         Debug.Log(msg);
         string[] data =msg.Split(',');
         pla.horimove=-(float.Parse(data[0])/10*1.2f);
-        pla.vertimove=(float.Parse(data[1])/10*1.2f);
+        pla.vertimove=(float.Parse(data[1])/10*1.8f);
 
     }
 
