@@ -15,6 +15,10 @@ public class mover : MonoBehaviour
    bool obs;
    [SerializeField]
     Health heali;
+   
+    float speed=25;
+   
+    
 
 
     void Start()
@@ -25,7 +29,10 @@ public class mover : MonoBehaviour
     }
     
     void Update()
-    {   
+    {  
+      if(obs)
+      transform.Rotate(new Vector3(0,1,0)*Time.deltaTime*speed);
+    
        transform.position = Vector3.Lerp(transform.position,new Vector3(transform.position.x,transform.position.y,-25),movespeed/100);
    
         if(transform.position.z<=dist)

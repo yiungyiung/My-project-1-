@@ -146,3 +146,4 @@ MonoBehaviour:
   dist: -10
   obs: 1
   heali: {fileID: 0}
+  speed: 25

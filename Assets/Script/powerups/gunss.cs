@@ -15,23 +15,29 @@ public class gunss : MonoBehaviour
      [SerializeField]
      float bulletForce;
      float nextTimeOfFire= 0;
+     [SerializeField]
      bool canShoot=false;
     [SerializeField]
     bool tripguns;
     [SerializeField]
     float tripguntimer;
     float tripgunfloat;
+    
+    void Start()
+    {
+       Input.simulateMouseWithTouches = false;
+    }
  
     
     void Update()
     {   
       if(tripguns)
         {
-       if(Input.GetButton("Fire1")) //When the mouse button is pressed 
+        if(Input.GetButton("Jump")||Input.GetMouseButton(0)) //When the mouse button is pressed 
       {
         shoottrue();
       }
-      if(Input.GetButtonUp("Fire1"))//when the mouse button is lifted
+      if(Input.GetButtonUp("Jump")||Input.GetMouseButtonUp(0))//when the mouse button is lifted
       {
       shootfalse();
       }

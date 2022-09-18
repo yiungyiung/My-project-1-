@@ -16,14 +16,20 @@ public class Shooting : MonoBehaviour
      bool canShoot=false;
      [SerializeField]
      AudioSource shootingsound;
+
+     void Start()
+    {
+       Input.simulateMouseWithTouches = false;
+    }
+ 
     
     void Update()
     {   
-        if(Input.GetButton("Fire1")) //When the mouse button is pressed 
+        if(Input.GetButton("Jump")||Input.GetMouseButton(0)) //When the mouse button is pressed 
       {
         shoottrue();
       }
-      if(Input.GetButtonUp("Fire1"))//when the mouse button is lifted
+      if(Input.GetButtonUp("Jump")||Input.GetMouseButtonUp(0))//when the mouse button is lifted
       {
       shootfalse();
       }

@@ -34,6 +34,8 @@ public class Health : MonoBehaviour
     Button myButton1;
     [SerializeField]
     btncancel btns;
+    [SerializeField]
+    AudioSource dam;
 
 
     void Start(){
@@ -58,8 +60,10 @@ public class Health : MonoBehaviour
 
     public void dechealth(int sub)
     {   if(!invincibility){
+        dam.Stop();
         health=health-sub;
          emotis.spawner(prefab);
+         dam.Play();
 
         if (health <=0)
         { health=0;
