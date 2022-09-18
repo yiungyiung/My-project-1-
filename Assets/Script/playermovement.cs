@@ -10,11 +10,21 @@ public class playermovement : MonoBehaviour
     public float vertimove;
     Vector3 movedirec;
     [SerializeField]
-    float speed;
+    public float speedx;
+    [SerializeField]
+    public float speedy;
     
     void Awake() {
+    
      QualitySettings.vSyncCount = 0;
      Application.targetFrameRate = 60;
+     
+ }
+
+ void Start() {
+    
+    speedx=PlayerPrefs.GetFloat("sensex");
+    speedy=PlayerPrefs.GetFloat("sensey");
  }
   
     void FixedUpdate()
@@ -36,7 +46,19 @@ public class playermovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.Euler(transform.rotation.x,transform.rotation.y,0),0.1f);
         }
-        movedirec = Vector3.up*vertimove*speed/1.5f + Vector3.right * horimove*speed/1.2f;
+        movedirec = Vector3.up*vertimove*speedy*10 + Vector3.right * horimove*speedx*10;
         rb.AddForce(movedirec,ForceMode.Acceleration);
+    }
+
+
+    public void changespeedx(float x)
+    {
+        speedx = x;
+        PlayerPrefs.SetFloat("sensex",speedx);
+    }
+   public  void changespeedy(float y)
+    {
+        speedy = y;
+         PlayerPrefs.SetFloat("sensey",speedy);
     }
 }
