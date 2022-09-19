@@ -15,6 +15,7 @@ public class mover : MonoBehaviour
    bool obs;
    [SerializeField]
     Health heali;
+    int x,y,z;
    
     float speed=25;
    
@@ -26,12 +27,15 @@ public class mover : MonoBehaviour
       heali=GameObject.FindWithTag("Player").GetComponent<Health>();
        movespeed =((float)(GameObject.FindWithTag("GameController").GetComponent<GameManager>().timer)/600)+assignedspeed;
        orimovespeed =movespeed;
+       x=Random.Range(0,2);
+       y=Random.Range(0,2);
+       z=Random.Range(0,2);
     }
     
     void Update()
     {  
       if(obs)
-      transform.Rotate(new Vector3(0,1,0)*Time.deltaTime*speed);
+      transform.Rotate(new Vector3(x,y,z)*Time.deltaTime*speed);
     
        transform.position = Vector3.Lerp(transform.position,new Vector3(transform.position.x,transform.position.y,-25),movespeed/100);
    

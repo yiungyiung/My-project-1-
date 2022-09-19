@@ -15,13 +15,14 @@ public class gunss : MonoBehaviour
      [SerializeField]
      float bulletForce;
      float nextTimeOfFire= 0;
-     [SerializeField]
-     bool canShoot=false;
+    
     [SerializeField]
     bool tripguns;
     [SerializeField]
     float tripguntimer;
     float tripgunfloat;
+    [SerializeField]
+    Shooting shoot;
     
     void Start()
     {
@@ -33,15 +34,8 @@ public class gunss : MonoBehaviour
     {   
       if(tripguns)
         {
-        if(Input.GetButton("Jump")||Input.GetMouseButton(0)) //When the mouse button is pressed 
-      {
-        shoottrue();
-      }
-      if(Input.GetButtonUp("Jump")||Input.GetMouseButtonUp(0))//when the mouse button is lifted
-      {
-      shootfalse();
-      }
-        if(canShoot && Time.time>=nextTimeOfFire)
+        
+        if(shoot.canShoot && Time.time>=nextTimeOfFire)
         {
      
         nextTimeOfFire = Time.time + firespeed;
@@ -78,10 +72,4 @@ public class gunss : MonoBehaviour
        
     }
 
-    public void shoottrue(){
-      canShoot = true;
-    }
-   public void shootfalse(){
-      canShoot = false;
-    }
 }

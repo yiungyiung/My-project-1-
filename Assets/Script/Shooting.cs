@@ -13,7 +13,7 @@ public class Shooting : MonoBehaviour
      [SerializeField]
      float bulletForce;
      float nextTimeOfFire= 0;
-     bool canShoot=false;
+     public bool canShoot=false;
      [SerializeField]
      AudioSource shootingsound;
 
@@ -29,7 +29,7 @@ public class Shooting : MonoBehaviour
       {
         shoottrue();
       }
-      if(Input.GetButtonUp("Jump")||Input.GetMouseButtonUp(0))//when the mouse button is lifted
+      else if(Input.GetButtonUp("Jump")||Input.GetMouseButtonUp(0))//when the mouse button is lifted
       {
       shootfalse();
       }
