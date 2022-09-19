@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject prefabkiller;
     emotispawner emotis;
+    [SerializeField]
+    GameObject[] prefabplanet;
 
     void Start()
     {   
@@ -55,8 +57,8 @@ public class GameManager : MonoBehaviour
         {
             nextTimeOfspawn = (float)timer + spawnspeed;
             
-            GameObject spawned = Instantiate(prefab,new Vector3(randomposx,randomposy,175),Quaternion.identity);
-            randomsize=Random.Range(3,10);
+            GameObject spawned = Instantiate(prefabplanet[Random.Range(0,prefabplanet.Length)],new Vector3(randomposx,randomposy,175),Quaternion.identity);
+            randomsize=Random.Range(1.5f,5f);
             spawned.transform.localScale=new Vector3(randomsize,randomsize,randomsize);
 
 

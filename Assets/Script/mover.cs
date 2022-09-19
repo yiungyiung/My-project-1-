@@ -30,6 +30,10 @@ public class mover : MonoBehaviour
        x=Random.Range(0,2);
        y=Random.Range(0,2);
        z=Random.Range(0,2);
+       if(x==0&&y==0&&z==0)
+       {
+         y=1;
+       }
     }
     
     void Update()
