@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.02675764, g: 0.017075418, b: 0.018529722, a: 1}
+  m_IndirectSpecularColor: {r: 0.02583649, g: 0.015538821, b: 0.01740738, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -827,7 +827,7 @@ PrefabInstance:
     - target: {fileID: 1313489751043812208, guid: 619a3edf643a4744e913ce52f1ed2ce8, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1332877443}
+      objectReference: {fileID: 760825486}
     - target: {fileID: 1313489751043812208, guid: 619a3edf643a4744e913ce52f1ed2ce8, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -926,7 +926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313489751043812211, guid: 619a3edf643a4744e913ce52f1ed2ce8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -271
+      value: -230
       objectReference: {fileID: 0}
     - target: {fileID: 1313489751043812211, guid: 619a3edf643a4744e913ce52f1ed2ce8, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1134,6 +1134,7 @@ GameObject:
   - component: {fileID: 760825482}
   - component: {fileID: 760825481}
   - component: {fileID: 760825485}
+  - component: {fileID: 760825486}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -1365,6 +1366,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cont: {fileID: 1332877441}
   sound: {fileID: 760825481}
+--- !u!114 &760825486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760825479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de06b7e56e88ce43bfcf499730a2091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedy: 0
+  speedx: 0
+  sliderr: {fileID: 692046303}
+  sliderr1: {fileID: 1256397755}
+  Text: {fileID: 692046302}
+  Text1: {fileID: 1256397754}
 --- !u!1 &764658020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,7 +1678,7 @@ PrefabInstance:
     - target: {fileID: 1903761157805712412, guid: 33cc90f59d2ae4046bc3e236728b2a49, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1332877443}
+      objectReference: {fileID: 760825486}
     - target: {fileID: 1903761157805712412, guid: 33cc90f59d2ae4046bc3e236728b2a49, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1827,14 +1846,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1332877442}
-  - component: {fileID: 1332877443}
   m_Layer: 5
   m_Name: Contolsui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1332877442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1859,24 +1877,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1332877443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332877441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de06b7e56e88ce43bfcf499730a2091, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedy: 0
-  speedx: 0
-  sliderr: {fileID: 692046303}
-  sliderr1: {fileID: 1256397755}
-  Text: {fileID: 692046302}
-  Text1: {fileID: 1256397754}
 --- !u!1 &1361187563
 GameObject:
   m_ObjectHideFlags: 0

@@ -385,7 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1531213445540486, guid: e0815e227ed46e445b99930271e8942c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114282555968907678, guid: e0815e227ed46e445b99930271e8942c, type: 3}
       propertyPath: valueMultiplier
@@ -8631,7 +8631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1770802139
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9527,7 +9527,18 @@ MonoBehaviour:
   x2timer: 5
   prefabkiller: {fileID: 6983319371356622287, guid: 8c423732543d0cb439e0951827e67752, type: 3}
   prefabplanet:
+  - {fileID: 9183324707127383977, guid: 5a7b52cd3a90e4f4cbed1e17ea600284, type: 3}
+  - {fileID: 3850428939114905642, guid: d5845d252fcfdf1478e9163cceb79c15, type: 3}
+  - {fileID: 2712968196565130930, guid: 2e8f47fc8adfe2b4ca0473716bf064f1, type: 3}
+  - {fileID: 9043946182621208393, guid: 95ca7ac59e7d91f40932fb02d2d4c003, type: 3}
+  - {fileID: 3724965214871539060, guid: 14f3d92a65bbdf94fb9b843416fc1cba, type: 3}
+  - {fileID: 7513639702447369048, guid: 3896182d6263a6e4ba534ad32dded303, type: 3}
+  - {fileID: 6334216284386027826, guid: 6d29f850a555106429d9bb64b0282fa4, type: 3}
+  - {fileID: 6862246836206673410, guid: 442e8f04c2dbd154694e3a266a21509a, type: 3}
+  - {fileID: 3025414501818676813, guid: f7e392fa3701b42488ced91899920015, type: 3}
   - {fileID: 8772366249892628314, guid: 320fc3152aac1d344bdce34d781ad35a, type: 3}
+  - {fileID: 3218930448674671385, guid: d375055d0c7854945887f1da0937d15d, type: 3}
+  - {fileID: 4180584394049764128, guid: 7328adde5bd1a9d4f87a80ae9c72d5d5, type: 3}
 --- !u!4 &2110852101
 Transform:
   m_ObjectHideFlags: 0
