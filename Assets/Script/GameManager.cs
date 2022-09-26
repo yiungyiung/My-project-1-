@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
     emotispawner emotis;
     [SerializeField]
     GameObject[] prefabplanet;
+    public int opscore;
+    int highscore;
+    public bool greaterscore;
+    [SerializeField]
+    GameObject highscoreobject;
 
     void Start()
     {   
@@ -43,6 +48,8 @@ public class GameManager : MonoBehaviour
         kills=0;
         timer=0;
         spawnspeed=assspeed;
+        highscore=PlayerPrefs.GetInt("high");
+        greaterscore = false;
     }
     void Update()
     {
@@ -52,7 +59,13 @@ public class GameManager : MonoBehaviour
         
         timer=timer+Time.deltaTime;
         timeText.SetText(""+(float)System.Math.Round(timer,1));
-        scoreText.SetText(""+ (score+(int)timer));
+        opscore=(score+(int)timer);
+        scoreText.SetText(""+ opscore);
+        if(!greaterscore && opscore>highscore)
+        {   
+            greaterscore=true;
+            highscoreobject.SetActive(true);
+        }
         if(timer>=nextTimeOfspawn)
         {
             nextTimeOfspawn = (float)timer + spawnspeed;

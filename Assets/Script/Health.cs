@@ -36,6 +36,8 @@ public class Health : MonoBehaviour
     btncancel btns;
     [SerializeField]
     AudioSource dam;
+    [SerializeField]
+    GameObject highscoreobject;
 
 
     void Start(){
@@ -71,7 +73,12 @@ public class Health : MonoBehaviour
             Destroy(obj);
         }  
           healthText.SetText("" + health); 
-          finalscore=(int)gaman.timer + gaman.score;
+          finalscore=(int)gaman.opscore;
+          if(gaman.greaterscore)
+          {
+            highscoreobject.SetActive(true);
+             PlayerPrefs.SetInt("high",finalscore);
+          }
           gaman.scoreText.SetText("" + finalscore);
           kills=gaman.kills;
           timer.SetText("Time: "+(int)gaman.timer+" sec");
