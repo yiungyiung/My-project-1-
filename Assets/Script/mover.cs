@@ -17,7 +17,7 @@ public class mover : MonoBehaviour
     Health heali;
     int x,y,z;
    
-    float speed=25;
+    float speed=35;
    
     
 
