@@ -10,6 +10,7 @@ TagManager:
   - stickers
   - sound
   - sound1
+  - GameMusic
   layers:
   - Default
   - TransparentFX
