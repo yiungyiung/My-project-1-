@@ -14,9 +14,13 @@ public class menuslider : MonoBehaviour
     [SerializeField]
     Slider sliderr1;
     [SerializeField]
+    Slider sliderr2;
+    [SerializeField]
     TMP_Text Text;
     [SerializeField]
     TMP_Text Text1;
+    [SerializeField]
+    TMP_Text Text2;
     void Start()
     {
     if(PlayerPrefs.GetInt("played")==0){
@@ -25,8 +29,11 @@ public class menuslider : MonoBehaviour
     PlayerPrefs.SetFloat("sensey",speedy);
     PlayerPrefs.SetFloat("sensex",speedx);
     PlayerPrefs.SetInt("played",1);
-     sliderr.value=speedx;
+    PlayerPrefs.SetFloat("volume",5.0f);
+    sliderr.value=speedx;
     sliderr1.value=speedy;
+    sliderr2.value=5.0f;
+    Text2.SetText("Volume"+": "+System.Math.Round(sliderr2.value,2));
 
     }
     else
@@ -35,6 +42,8 @@ public class menuslider : MonoBehaviour
     speedy=PlayerPrefs.GetFloat("sensey");}
     sliderr.value=speedx;
     sliderr1.value=speedy; 
+    sliderr2.value=PlayerPrefs.GetFloat("volume");
+    Text2.SetText("Volume"+": "+System.Math.Round(sliderr2.value,2));
     }
 
     
@@ -43,6 +52,7 @@ public class menuslider : MonoBehaviour
         
         Text.SetText("Sensitivity x"+": "+System.Math.Round(speedx,2));
         Text1.SetText("Sensitivity y"+": "+System.Math.Round(speedy,2));
+        
     }
 
      public void changespeedx(float x)
@@ -54,5 +64,12 @@ public class menuslider : MonoBehaviour
     {
         speedy = y;
          PlayerPrefs.SetFloat("sensey",speedy);
+    }
+    public void changeaudiovol(float v)
+    {   Debug.Log("enteredvol"+v);
+        GameObject musicObj = GameObject.FindGameObjectWithTag("GameMusic");
+        (musicObj.GetComponent<AudioSource>()).volume=0.03f*v;
+        PlayerPrefs.SetFloat("volume",v);
+        Text2.SetText("Volume"+": "+System.Math.Round(sliderr2.value,2));
     }
 }
