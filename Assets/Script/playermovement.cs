@@ -30,8 +30,8 @@ public class playermovement : MonoBehaviour
     void FixedUpdate()
     {
              
-       // horimove=SimpleInput.GetAxisRaw("Horizontal");
-       // vertimove=SimpleInput.GetAxisRaw("Vertical");
+      //horimove=SimpleInput.GetAxisRaw("Horizontal");
+       //vertimove=SimpleInput.GetAxisRaw("Vertical");
         
        
          if(horimove<-0.2)

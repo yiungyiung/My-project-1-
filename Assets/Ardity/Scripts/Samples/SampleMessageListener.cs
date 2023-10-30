@@ -15,17 +15,11 @@ using System.Collections;
  *  - OnConnectionEvent
  */
 public class SampleMessageListener : MonoBehaviour
-{   
-    public string[] data;
-    public playermovement pla;
+{
     // Invoked when a line of data is received from the serial device.
     void OnMessageArrived(string msg)
-    {   
-        Debug.Log(msg);
-        string[] data =msg.Split(',');
-        pla.horimove=-(float.Parse(data[0])/10);
-        pla.vertimove=(float.Parse(data[1])/10);
-
+    {
+        Debug.Log("Message arrived: " + msg);
     }
 
     // Invoked when a connect/disconnect event occurs. The parameter 'success'

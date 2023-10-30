@@ -51,8 +51,4 @@ public class Shooting : MonoBehaviour
       canShoot = false;
     }
 
-
-    
-        
-    
 }
