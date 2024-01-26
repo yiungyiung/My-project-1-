@@ -11,7 +11,7 @@ public class WifiVal : MonoBehaviour
     void Start()
     {
         // Replace with the IP address of your NodeMCU
-        string serverAddress = "ws://192.168.4.1:8080";
+        string serverAddress = "ws://192.168.79.1:8080";
 
         ws = new WebSocket(serverAddress);
         ws.OnMessage += OnMessage;
@@ -26,6 +26,7 @@ public class WifiVal : MonoBehaviour
         if (data.Length>3)
         {
             rs.data = data;
+
         }
     }
     private void OnDestroy()

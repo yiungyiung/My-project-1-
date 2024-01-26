@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class emotispawner : MonoBehaviour
 {   
+    public GameObject sp;
     public void spawner(GameObject prefab)
     {   
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("stickers"))
         {
             Destroy(obj);
         }
-        GameObject spawned = Instantiate(prefab,new Vector3(transform.position.x,transform.position.y+1,transform.position.z-3),Quaternion.identity);
+        GameObject spawned = Instantiate(prefab,sp.transform.position,Quaternion.identity);
         spawned.transform.SetParent(gameObject.transform);
     }
 }
